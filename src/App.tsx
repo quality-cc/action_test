@@ -10,15 +10,15 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1 className="title">Olá Mundo!</h1>
-        <p className="subtitle">Seu primeiro projeto React com TypeScript está pronto!</p>
+        <p className="subtitle">Quality Contact Center (QCC)!</p>
         <div className="logo-react-container">
           {/* Adicionando um SVG do React para um toque visual */}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458 458" className="react-logo">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458 458" className="react-logo">
             <g fill="none" stroke="#61DAFB" strokeWidth="20" strokeLinejoin="round">
-              <path d="M229 25L229 433" strokeDasharray="390" strokeDashoffset="0"></path>
-              <ellipse cx="229" cy="229" rx="204" ry="78" transform="rotate(60 229 229)" strokeDasharray="575" strokeDashoffset="0"></path>
-              <ellipse cx="229" cy="229" rx="204" ry="78" transform="rotate(120 229 229)" strokeDasharray="575" strokeDashoffset="0"></path>
-              <ellipse cx="229" cy="229" rx="204" ry="78" transform="rotate(180 229 229)" strokeDasharray="575" strokeDashoffset="0"></path>
+              <path d="M229 25L229 433" strokeDasharray="390" strokeDashoffset="0" />
+              <ellipse cx="229" cy="229" rx="204" ry="78" transform="rotate(60 229 229)" strokeDasharray="575" strokeDashoffset="0" />
+              <ellipse cx="229" cy="229" rx="204" ry="78" transform="rotate(120 229 229)" strokeDasharray="575" strokeDashoffset="0" />
+              <ellipse cx="229" cy="229" rx="204" ry="78" transform="rotate(180 229 229)" strokeDasharray="575" strokeDashoffset="0" />
             </g>
           </svg>
         </div>
