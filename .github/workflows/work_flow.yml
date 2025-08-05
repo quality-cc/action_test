@@ -40,5 +40,5 @@ jobs:
         with:
           configFile: commitlint.config.cjs
 
-    - name: Build and Deploy React app to GitHub Pages
-      uses: omkartapale/react-deployment-gh-pages@v1.0.0
+      - name: Build and Deploy React app to GitHub Pages
+        uses: omkartapale/react-deployment-gh-pages@v1.0.0
