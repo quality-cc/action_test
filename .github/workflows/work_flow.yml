@@ -1,47 +1,30 @@
-# This is a basic workflow that is manually triggered
+name: Testes E2E com Cypress
 
-name: Build and Deploy
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build-and-deploy:
-
+  cypress-run:
     runs-on: ubuntu-latest
-    
     steps:
-     - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
         with:
-          fetch-depth: 0 # Fetch all history for all branches and tags
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+          node-version: '18'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Fazer o build do projeto
+        run: npm run build
+
+      - name: Rodar os testes E2E com Cypress
+        uses: cypress-io/github-action@v5
         with:
-          node-version: '20.9.0'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run lint
-        run: npm run lint
-
-      - name: Run format check
-        run: npm run format
-
-      - name: Check commit messages
-        uses: wagoid/commitlint-github-action@v3
-        with:
-          configFile: commitlint.config.cjs
-          
-       uses: JamesIves/github-pages-deploy-action@4.1.4
-        with: dist # The folder the action should deploy.
-
-      - name: Build and Deploy React app to GitHub Pages
-        uses: omkartapale/react-deployment-gh-pages@v1.0.0
+          build: npm run build
+          start: npm start
